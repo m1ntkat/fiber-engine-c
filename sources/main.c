@@ -6,6 +6,34 @@
 
 #define WINDOW_TITLE "Fiber Engine"
 
+void helloWorld()
+{
+    InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
+    SetTargetFPS(60);
+
+    //Texture2D texture = LoadTexture(ASSETS_PATH"test.png"); // Check README.md for how this works
+
+    while (!WindowShouldClose())
+    {
+        BeginDrawing();
+
+        ClearBackground(RAYWHITE);
+
+        //const int texture_x = SCREEN_WIDTH / 2 - texture.width / 2;
+        //const int texture_y = SCREEN_HEIGHT / 2 - texture.height / 2;
+        //DrawTexture(texture, texture_x, texture_y, WHITE);
+
+        const char* text = "Hello World!!";
+        const Vector2 text_size = MeasureTextEx(GetFontDefault(), text, 20, 1);
+        DrawText(text, SCREEN_WIDTH / 2 - text_size.x / 2, SCREEN_HEIGHT / 2 - text_size.y / 2, 20, BLACK);
+
+        EndDrawing();
+    }
+
+    CloseWindow();
+}
+
+
 void helloRaylib()
 {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
@@ -40,7 +68,8 @@ int main(void)
     printf("(C) 2023 m1ntkat \n");
     printf("\n");
 
-    helloRaylib();
+    //helloRaylib();
+    helloWorld();
 
     return 0;
 }
