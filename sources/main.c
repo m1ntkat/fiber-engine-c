@@ -1,11 +1,12 @@
 #include "raylib.h"
+#include <stdio.h>
 
 #define SCREEN_WIDTH (800)
 #define SCREEN_HEIGHT (450)
 
-#define WINDOW_TITLE "Window title"
+#define WINDOW_TITLE "Fiber Engine"
 
-int main(void)
+void helloRaylib()
 {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
     SetTargetFPS(60);
@@ -30,6 +31,19 @@ int main(void)
     }
 
     CloseWindow();
+}
+
+int main(void)
+{
+    printf("Fiber Engine \n");
+    //printf("Version 0.0.1 \n");
+    printf("(C) 2023 m1ntkat \n");
+    printf("\n");
+
+    helloRaylib();
 
     return 0;
 }
+
+//void helloRaylib(void);
+
